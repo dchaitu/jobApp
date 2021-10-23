@@ -1,0 +1,23 @@
+.not-found {
+  background-color: black;
+  color: white;
+  height: 100vh;
+}
+
+.text-color {
+  color: white;
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-self: center; */
+}
+
+.imgs {
+  height: 300px;
+  width: 300px;
+  align-self: center;
+}

@@ -1,0 +1,32 @@
+.box {
+  color: white;
+  /* background-color: #202020; */
+  background-color: #272727;
+  padding: 30px;
+  margin: 15px;
+  border-radius: 8px;
+}
+
+.icon {
+  height: 60px;
+  width: 60px;
+  margin: 10px;
+}
+
+.title {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.size {
+  width: 100px;
+}
+.title-size {
+  width: 500px;
+  /* height: 500px; */
+  padding-left: 20px;
+  border: 1px solid white;
+
+  /* padding: 10px; */
+  /* overflow: auto; */
+}
