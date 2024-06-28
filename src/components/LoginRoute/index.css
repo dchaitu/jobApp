@@ -1,0 +1,66 @@
+.backgroundImg {
+  background-color: #000;
+  height: 100vh;
+}
+
+.form-container {
+  background-color: #202020;
+  padding: 30px;
+  align-self: center;
+  color: #ffffff;
+  height: 60vh;
+  width: 30vw;
+}
+
+.login-button {
+  background-color: #4f46e5;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.text-color {
+  color: #ffffff;
+}
+
+.input-label {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.username-input-field {
+  background-color: transparent;
+  padding: 10px;
+  color: #f1f5f9;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 100%;
+  margin: 10px;
+}
+
+.password-input-field {
+  background-color: transparent;
+  padding: 10px;
+  color: #f1f5f9;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 100%;
+  margin: 10px;
+}
+.error-message {
+  align-self: start;
+  font-size: 12px;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  font-family: 'Roboto';
+  font-size: 12px;
+  line-height: 16px;
+  color: #ff0b37;
+  font-weight: bold;
+}
+
+.logo {
+  width: 200px;
+}
