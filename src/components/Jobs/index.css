@@ -34,3 +34,17 @@
   width: 20vw;
   padding: 10px;
 }
+
+.jobs-heading {
+  color: white;
+  font-weight: bold;
+}
+
+.jobs-description {
+  color: white;
+}
+
+.label-button{
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

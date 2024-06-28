@@ -91,6 +91,7 @@ class Jobs extends Component {
           name="salary"
           value={emp.salaryRangeId}
           onChange={this.handleChange}
+          className="label-button"
         />
         <span htmlFor={emp.employmentTypeId}>{emp.label} </span>
         <br />
@@ -102,9 +103,10 @@ class Jobs extends Component {
       <>
         <input
           type="checkbox"
-          name={emp.employmentTypeId}
+          name="employ-type"
           value={emp.employmentTypeId}
           onChange={this.onSelectBox}
+          className="label-button"
         />
         <span htmlFor={emp.employmentTypeId}>{emp.label} </span>
         <br />
@@ -115,10 +117,12 @@ class Jobs extends Component {
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
     })
-    const {searchInput, salary, employment} = this.state
-
+    const {searchInput, salary, emp} = this.state
+    console.log('emp', emp)
+    const employTypes = emp.join(',')
     const jwtToken = Cookies.get('jwt_token')
-    const api = `https://apis.ccbp.in/jobs?employment_type=${employment}&minimum_package=${salary}&search=${searchInput}`
+    const api = `https://apis.ccbp.in/jobs?employment_type=${employTypes}&minimum_package=${salary}&search=${searchInput}`
+    console.log(api)
     // st apiUrl = 'https://apis.ccbp.in/jobs?employment_type=FULLTIME,PARTTIME&minimum_package=${salary}&search='
     const options = {
       headers: {
@@ -172,22 +176,17 @@ class Jobs extends Component {
   }
 
   onSelectBox = event => {
-    console.log(event.target.value)
+    // console.log(event.target.value)
+
     const {emp, employment} = this.state
-    const input = event.target.value
-    this.setState(
-      {
-        emp: emp.includes(input)
-          ? emp.filter(item => item !== input)
-          : [...emp, input],
-      },
-      () => {
-        console.log(emp)
-      },
-    )
-    const employ = emp.join(',')
-    // console.log(employ)
-    this.setState({employment: employ}, this.getJobs)
+    let updatedList = emp
+    // const newArray = [...emp, event.target.value]
+    console.log('event.target.value = ', event.target.value)
+    // console.log('newArray = ', newArray)
+    if (emp.includes(event.target.value)) {
+      updatedList = emp.filter(eachType => eachType !== event.target.value)
+    } else updatedList = [...updatedList, event.target.value]
+    this.setState({emp: updatedList}, this.getJobs)
   }
 
   //   onChangeSearchInput = event => {
@@ -224,15 +223,15 @@ class Jobs extends Component {
         ))}
       </div>
     ) : (
-      <div className="no-products-view">
+      <div className="jobs-view">
         <img
-          src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
-          className="no-products-img"
-          alt="no products"
+          src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+          className="jobs-img"
+          alt="no jobs"
         />
-        <h1 className="no-products-heading">No Products Found</h1>
-        <p className="no-products-description">
-          We could not find any products. Try other filters.
+        <h1 className="jobs-heading">No Jobs Found</h1>
+        <p className="jobs-description">
+          We could not find any jobs. Try other filters.
         </p>
       </div>
     )

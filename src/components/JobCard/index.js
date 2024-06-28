@@ -18,14 +18,16 @@ const JobCard = props => {
     rating,
   } = jobData
   return (
-    <div className="box ">
-      <div className="icon d-flex flex-row" style={{width: '300px;'}}>
-        <img src={company} alt="company" />
-        <div className=" d-flex flex-column title-size">
-          <h4>{title}</h4>
-          <p>
-            <AiFillStar color="yellow" /> {rating}
-          </p>
+    <div className="signin-box">
+      <div className="d-flex flex-row">
+        <img src={company} className="icon" alt="company" />
+        <div className=" d-flex flex-column ">
+          <div className="title-size pt-3">
+            <h4>{title}</h4>
+            <p>
+              <AiFillStar color="yellow" /> {rating}
+            </p>
+          </div>
         </div>
       </div>
 

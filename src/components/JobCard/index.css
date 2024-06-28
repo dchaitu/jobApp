@@ -1,4 +1,4 @@
-.box {
+.signin-box {
   color: white;
   /* background-color: #202020; */
   background-color: #272727;
@@ -25,7 +25,7 @@
   width: 500px;
   /* height: 500px; */
   padding-left: 20px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 
   /* padding: 10px; */
   /* overflow: auto; */
